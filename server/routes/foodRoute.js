@@ -3,6 +3,7 @@ import { addFood, listFood, removeFood } from "../controllers/foodController.js"
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 import { v2 as cloudinary } from "cloudinary";
+import 'dotenv/config';
 
 const foodRouter = express.Router();
 
@@ -17,9 +18,9 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "uploads", // Folder in your Cloudinary storage
-    format: async (req, file) => "jpg", // Specify the image format
-    public_id: (req, file) => Date.now() + "_" + file.originalname, // Unique file name
+    folder: "uploads", 
+    allowed_formats: ['jpg', 'png', 'jpeg'], 
+    public_id: (req, file) => Date.now() + "_" + file.originalname, 
   },
 });
 
