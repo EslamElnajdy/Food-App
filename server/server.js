@@ -15,9 +15,7 @@ const port = 4000;
 
 // middleware
 app.use(express.json());
-app.use(cors({
-  origin: 'https://client-fizcbrfae-eslamelnajdys-projects.vercel.app' // Frontend URL
-}));
+app.use(cors());
 
 // db connection
 connectDB();
