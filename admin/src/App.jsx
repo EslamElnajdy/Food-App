@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
-  const url = 'http://localhost:4000';
+  const url = 'https://server-mij7kqb3l-eslamelnajdys-projects.vercel.app';
   return (
     <div className="app">
       <ToastContainer />
